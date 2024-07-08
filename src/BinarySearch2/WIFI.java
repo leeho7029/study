@@ -23,7 +23,7 @@ public class WIFI {
     }
 
     static int binary(int arr[], int n, int m){
-        int big = arr[m-1]-arr[0]; //최대거리는 가장먼 위치와 맨처음 위치의 차이
+        int big = arr[n-1]-arr[0]; //최대거리는 가장먼 위치와 맨처음 위치의 차이
         int small = 1; // 최소거리는 1
         int result = 0;
         while (small <= big){
@@ -39,10 +39,10 @@ public class WIFI {
             }
             if(count >= m){ // 목표한 갯수와 비교
                 result=distance;
-                small = distance +1; // 카운트가 많으면 범위를 좁혀야 해서,
+                small = distance +1; // 카운트가 많으면 범위를 넓혀야 해서,
                                     // small의 범위를 중간값의 1보다 크게설정해서 while문 탈출할수 있게한다.
             }else{
-                big = distance - 1; //카운트가 적으면 범위를 늘린다.
+                big = distance - 1; //카운트가 적으면 범위를 줄인다.
             }
         }
         return result;

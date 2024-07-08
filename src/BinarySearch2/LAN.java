@@ -21,11 +21,6 @@ public class LAN {
         long result = binary(numbers,m,n);
 
         System.out.println(result);
-
-
-
-
-
     }
 
     static long binary(long arr[], int k, int n){
@@ -41,8 +36,8 @@ public class LAN {
                 count += (arr[i] / mid);
             }
             if(count >= k){
-                small = mid +1;;
                 result = mid;
+                small = mid +1;;
             } else {
                 big = mid - 1;
             }
