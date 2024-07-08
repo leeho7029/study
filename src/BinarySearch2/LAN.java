@@ -36,7 +36,7 @@ public class LAN {
         long result = mid;
         while (small <= big) {
             int count = 0;
-            mid = start + (big-small)/2; //가장 중간 길이
+            mid = (big+small)/2; //가장 중간 길이
             for (int i = 0; i < n; i++) {
                 count += (arr[i] / mid);
             }

@@ -29,18 +29,20 @@ public class WIFI {
         while (small <= big){
             int count = 1; // 맨처음 집은 무조건 설치를 함
             int distance = (big+small)/2; //탐색범위의 중간값
-            int spot = arr[0];
+            int spot = arr[0]; // 가장 처음 집은 무조건 설치
+
             for(int i =1; i<n; i++){
-                if(arr[i]-spot >= distance){
-                    count++;
-                    spot=arr[i];
+                if(arr[i]-spot >= distance){ //첫집과 그다음집간의 거리가 탐색범위보다 크면 설치
+                    count++; //설치수 증가
+                    spot=arr[i]; //설치후 다시 기준 집을 변경
                 }
             }
-            if(count >= m){
+            if(count >= m){ // 목표한 갯수와 비교
                 result=distance;
-                small = distance +1;
+                small = distance +1; // 카운트가 많으면 범위를 좁혀야 해서,
+                                    // small의 범위를 중간값의 1보다 크게설정해서 while문 탈출할수 있게한다.
             }else{
-                big = distance - 1;
+                big = distance - 1; //카운트가 적으면 범위를 늘린다.
             }
         }
         return result;
